@@ -1,0 +1,73 @@
+def Draemon_in_ShizukaRoom():
+    print("------------------------------ Stage 2-------------------------")
+    
+    print("""Tom is in his home, in Jerry's livingroom wall. Do you want to attack him?
+    """)
+    answer = input()
+    if answer.lower() == 'yes':
+        Draemon_love_Shizuka()
+    else:
+        Draemon_Disappeared()
+
+def Draemon_love_Shizuka():
+    print("------------------------------ Stage 3-------------------------")
+    print("Alright!")
+    print("""You have a piece of golden metal that looks like cheese and a very strong magnet. Do you 
+    want to throw it into Tom's whole so he eats it? Yes/No
+    """)
+    answer = input()
+    if answer.lower() == 'yes':
+        Draemon_Go_Aboroad()
+        win()
+    else:
+        Draemon_Disappeared()
+
+def Draemon_Disappeared():
+    print("------------------------------ Stage 1-------------------------")
+    
+    print("Hey there! You probably know Tom & Jerry, in fgact I'm sure you wouldn't be you without having watched it during your childhood")
+    print("""
+    You are Jerry, the cat haha. Sorry bud but Tom is too fast, so we need to get hom out of the house...
+    """)
+
+    print("""
+    Tom ran away........
+    """)
+    print("""
+    Do you want to use a magnet to get to where Tom is hidden??? Yes/No
+    """)
+    answer = input()
+    if answer.lower() == 'yes':
+        print("-> You found him! Tom is in the gardenn")
+        Draemon_in_ShizukaRoom()
+    else:
+        fall()
+
+def Draemon_Go_Aboroad():
+    print("------------------------------ Stage 4-------------------------")
+    print("ohhhh Tom ate it! But you forgot where you magnet is at! Guess where you left it")
+    print("Remember you got stock in the kitchen when chasing Tom earlier today...")
+    places_lst = ["under the couch","in the oven","behind the livingroom's door","on your hand","Japan","in your stomach","in the garden"]
+    answer = ""
+    while answer != "in the oven":
+        print("""
+        In which place?
+        """)
+        for place in places_lst:
+            print(place)
+        answer = input()
+
+# Winning screen:
+def won():
+    print("""
+    You have eaten Tom! Too bad, but you ended the show, so this game is over.....
+    """)
+    print("It was nice playing with you and RIP TOM. Jerry is the new WINNER!!!")
+
+# Losing screen: 
+def lost():
+    print("""
+    You lost... You have eaten Tom! But he made a whole in your stomach, Jerry!!! Tom escaped again!
+    """)
+
+Draemon_Disappeared()
